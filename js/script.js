@@ -1,5 +1,7 @@
 // elementi
 const containerImg= document.querySelector('.container-img')
+const up= document.querySelector('.up')
+const down= document.querySelector('.down')
 
 // contatore 
 let counterImg = 0
@@ -22,6 +24,50 @@ console.log(imgCollection)
 
 // rendo la prima immagine visibile
 imgCollection[counterImg].classList.remove('hide')
+
+ console.log(up)
+ 
+ down.classList.add('hide')
+
+
+// clic su up 
+up.addEventListener('click', function(){
+  down.classList.remove('hide')
+  imgCollection[counterImg].classList.add('hide')
+  counterImg++
+  if(counterImg===images.length-1){
+    up.classList.add('hide')
+    
+  }
+  
+  imgCollection[counterImg].classList.remove('hide')
+
+  
+
+})
+
+
+// clic su down 
+
+
+down.addEventListener('click', function(){
+
+   up.classList.remove('hide')
+   
+
+  imgCollection[counterImg].classList.add('hide')
+  
+  counterImg-- 
+  if(counterImg===0){
+      down.classList.add('hide')
+      
+    } 
+ 
+  imgCollection[counterImg].classList.remove('hide')
+
+ 
+ 
+})
 
 
 
