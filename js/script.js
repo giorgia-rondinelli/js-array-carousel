@@ -30,26 +30,33 @@ imgCollection[counterImg].classList.remove('hide')
 sideCollection[counterImg].classList.remove('dark')
  console.log(up)
  
- down.classList.add('hide')
+//  down.classList.add('hide')
 
 
 // clic su up 
 up.addEventListener('click', function(){
-  down.classList.remove('hide')
+  // down.classList.remove('hide')
   imgCollection[counterImg].classList.add('hide')
   sideCollection[counterImg].classList.add('dark')
 
   counterImg++
-  if(counterImg===images.length-1){
-    up.classList.add('hide')
+  // se il contatore è uguale alla lunghezza dell'array vuol dire che siamo oltre l'ultimo elemento quindi torniamo a 0 
+  if (counterImg===images.length){
+    counterImg=0;
+  }
+  console.log(counterImg)
+  // if(counterImg===images.length-1){
+  //   up.classList.add('hide')
 
     
-  }
+  // }
   
   
   imgCollection[counterImg].classList.remove('hide')
   
   sideCollection[counterImg].classList.remove('dark')
+
+  ;
 
 })
 
@@ -66,10 +73,15 @@ down.addEventListener('click', function(){
   sideCollection[counterImg].classList.add('dark')
   
   counterImg-- 
-  if(counterImg===0){
-      down.classList.add('hide')
+
+  // se il contatore è inferiore a 0 prendo l'ultimo elemento dell'array 
+  if (counterImg===-1){
+    counterImg=images.length-1;
+  }
+  // if(counterImg===0){
+  //     down.classList.add('hide')
       
-    } 
+  //   } 
  
   imgCollection[counterImg].classList.remove('hide')
   sideCollection[counterImg].classList.remove('dark')
